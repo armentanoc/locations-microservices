@@ -33,8 +33,9 @@ Maintenance Database: postgres
 Username: postgres
 Password: postgres
 
-![alt text](image-1.png)
-![alt text](image-3.png)
+![image](https://github.com/user-attachments/assets/acdd5373-1554-4565-b954-75a015f59c63)
+
+![image](https://github.com/user-attachments/assets/93a575a9-d0cf-4daa-8ddd-9975d5c2f6d3)
 
 ## eureka-server-app
 
