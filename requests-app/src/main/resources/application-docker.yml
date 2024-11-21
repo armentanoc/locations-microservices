@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://db_postgres:5432/locations-management-system
+    username: postgres
+    password: postgres
+
+  eureka:
+    client:
+      serviceUrl:
+        defaultZone: http://eureka-server-app:8761/eureka/
+    instance:
+      preferIpAddress: false

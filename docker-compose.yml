@@ -1,0 +1,101 @@
+services:
+  eureka-server-app:
+    container_name: eureka-server-app
+    build:
+      context: ./eureka-server-app
+      dockerfile: Dockerfile
+    ports:
+      - "8761:8761"
+    networks:
+      - app-network
+    environment:
+      - spring.application.name=eureka-server-app
+      - eureka.client.registerWithEureka=false
+      - eureka.client.fetchRegistry=false
+      - eureka.server.waitTimeInMsWhenSyncEmpty=0
+
+  auth-app:
+    container_name: auth-app
+    build:
+      context: ./auth-app
+      dockerfile: Dockerfile
+    ports:
+      - "8181:8181"
+    networks:
+      - app-network
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://eureka-server-app:8761/eureka/
+      - SPRING_PROFILES_ACTIVE=docker
+
+  locations-app:
+    container_name: locations-app
+    build:
+      context: ./locations-app
+      dockerfile: Dockerfile
+    ports:
+      - "8182:8182"
+    networks:
+      - app-network
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://eureka-server-app:8761/eureka/
+      - SPRING_PROFILES_ACTIVE=docker
+
+  requests-app:
+    container_name: requests-app
+    build:
+      context: ./requests-app
+      dockerfile: Dockerfile
+    ports:
+      - "8183:8183"
+    networks:
+      - app-network
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://eureka-server-app:8761/eureka/
+      - SPRING_PROFILES_ACTIVE=docker
+
+  users-app:
+    container_name: users-app
+    build:
+      context: ./users-app
+      dockerfile: Dockerfile
+    ports:
+      - "8184:8184"
+    networks:
+      - app-network
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://eureka-server-app:8761/eureka/
+      - SPRING_PROFILES_ACTIVE=docker
+
+  db:
+    container_name: db_postgres
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: locations-management-system
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d $POSTGRES_DB -U $POSTGRES_USER"]
+      interval: 10s
+      retries: 3
+      start_period: 10s
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "16543:80"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

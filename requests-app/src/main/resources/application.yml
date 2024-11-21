@@ -1,0 +1,45 @@
+server:
+  port: 8183
+
+spring:
+  application:
+    name: requests-app
+  jpa:
+    hibernate.ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+      hibernate.format_sql: true
+
+  profiles:
+    active: local
+
+---
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/locations-management-system
+    username: postgres
+    password: postgres
+
+  eureka:
+    client:
+      serviceUrl:
+        defaultZone: http://localhost:8761/eureka/
+    instance:
+      preferIpAddress: false
+
+---
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://postgres:5432/locations-management-system
+    username: postgres
+    password: postgres
+
+  eureka:
+    client:
+      serviceUrl:
+        defaultZone: http://eureka-server-app:8761/eureka/
+    instance:
+      preferIpAddress: false
