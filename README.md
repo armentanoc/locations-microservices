@@ -38,6 +38,17 @@ Save password ✔
 http://localhost:8761
 ```
 
+## api-gateway-app
+
+Devemos acessar todos os endpoints através dele, por exemplo:
+
+```bash
+http://localhost:8180/auth
+http://localhost:8180/users
+http://localhost:8180/locations
+http://localhost:8180/requests
+```
+
 ## auth-app
 
 ```bash
