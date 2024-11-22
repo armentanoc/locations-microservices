@@ -6,6 +6,18 @@ spring:
           uri: lb://AUTH-APP  
           predicates:
             - Path=/auth/**  
+        - id: LOCATIONS-APP
+          uri: lb://LOCATIONS-APP  
+          predicates:
+            - Path=/locations/**  
+        - id: REQUESTS-APP
+          uri: lb://REQUESTS-APP  
+          predicates:
+            - Path=/requests/**  
+        - id: USERS-APP
+          uri: lb://USERS-APP  
+          predicates:
+            - Path=/users/**  
 
 eureka:
   client:
