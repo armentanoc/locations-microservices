@@ -5,7 +5,7 @@ spring:
   profiles:
     active: docker  
   application:
-    name: auth-app
+    name: AUTH-APP
   jpa:
     hibernate.ddl-auto: update
     show-sql: true

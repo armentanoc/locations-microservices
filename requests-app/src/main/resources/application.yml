@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: requests-app
+    name: REQUESTS-APP
   jpa:
     hibernate.ddl-auto: update
     show-sql: true

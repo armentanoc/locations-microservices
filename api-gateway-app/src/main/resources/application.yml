@@ -4,7 +4,7 @@ server:
 spring:
   profiles:
     active: docker  
+  main:
+    web-application-type: reactive
   application:
-    name: api-gateway-app
-  thymeleaf:
-    check-template-location: false
+    name: API-GATEWAY-APP

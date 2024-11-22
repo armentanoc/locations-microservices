@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: users-app
+    name: USERS-APP
   jpa:
     hibernate.ddl-auto: update
     show-sql: true

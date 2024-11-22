@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: locations-app
+    name: LOCATIONS-APP
   jpa:
     hibernate.ddl-auto: update
     show-sql: true
