@@ -5,9 +5,9 @@ spring:
     username: postgres
     password: postgres
 
-  eureka:
-    client:
-      serviceUrl:
-        defaultZone: http://eureka-server-app:8761/eureka/
-    instance:
-      preferIpAddress: false
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-server-app:8761/eureka/
+  instance:
+    preferIpAddress: false

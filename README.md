@@ -35,7 +35,7 @@ Save password ✔
 ## eureka-server-app
 
 ```bash
-http://localhost:8761/health
+http://localhost:8761
 ```
 
 ## auth-app

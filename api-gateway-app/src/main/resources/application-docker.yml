@@ -1,7 +1,15 @@
 spring:
-  eureka:
-    client:
-      serviceUrl:
-        defaultZone: http://eureka-server-app:8761/eureka/
-    instance:
-      preferIpAddress: false
+  cloud:
+    gateway:
+      routes:
+        - id: auth-app
+          uri: lb://AUTH-APP  
+          predicates:
+            - Path=/auth/**  
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-server-app:8761/eureka/
+  instance:
+    preferIpAddress: false

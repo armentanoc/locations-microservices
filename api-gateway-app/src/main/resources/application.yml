@@ -3,6 +3,8 @@ server:
 
 spring:
   profiles:
-    active: local  
+    active: docker  
   application:
     name: api-gateway-app
+  thymeleaf:
+    check-template-location: false

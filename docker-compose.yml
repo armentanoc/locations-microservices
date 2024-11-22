@@ -24,8 +24,10 @@ services:
     networks:
       - app-network
     environment:
-      - eureka.client.serviceUrl.defaultZone=http://eureka-server-app:8761/eureka/
+      - EUREKA_CLIENT_SERVICE_URL_DEFAULT_ZONE=http://eureka-server-app:8761/eureka/
       - SPRING_PROFILES_ACTIVE=docker
+    depends_on:
+      - eureka-server-app
 
   auth-app:
     container_name: auth-app
@@ -37,8 +39,10 @@ services:
     networks:
       - app-network
     environment:
-      - eureka.client.serviceUrl.defaultZone=http://eureka-server-app:8761/eureka/
+      - EUREKA_CLIENT_SERVICE_URL_DEFAULT_ZONE=http://eureka-server-app:8761/eureka/
       - SPRING_PROFILES_ACTIVE=docker
+    depends_on:
+      - eureka-server-app
 
   locations-app:
     container_name: locations-app
@@ -50,8 +54,10 @@ services:
     networks:
       - app-network
     environment:
-      - eureka.client.serviceUrl.defaultZone=http://eureka-server-app:8761/eureka/
+      - EUREKA_CLIENT_SERVICE_URL_DEFAULT_ZONE=http://eureka-server-app:8761/eureka/
       - SPRING_PROFILES_ACTIVE=docker
+    depends_on:
+      - eureka-server-app
 
   requests-app:
     container_name: requests-app
@@ -63,8 +69,10 @@ services:
     networks:
       - app-network
     environment:
-      - eureka.client.serviceUrl.defaultZone=http://eureka-server-app:8761/eureka/
+      - EUREKA_CLIENT_SERVICE_URL_DEFAULT_ZONE=http://eureka-server-app:8761/eureka/
       - SPRING_PROFILES_ACTIVE=docker
+    depends_on:
+      - eureka-server-app
 
   users-app:
     container_name: users-app
@@ -76,8 +84,10 @@ services:
     networks:
       - app-network
     environment:
-      - eureka.client.serviceUrl.defaultZone=http://eureka-server-app:8761/eureka/
+      - EUREKA_CLIENT_SERVICE_URL_DEFAULT_ZONE=http://eureka-server-app:8761/eureka/
       - SPRING_PROFILES_ACTIVE=docker
+    depends_on:
+      - eureka-server-app
 
   db:
     container_name: db_postgres
