@@ -1,11 +1,5 @@
 # Como Executar 🧰
 
-Pela primeira vez, dentro de cada projeto, você deve compilar cada microsserviço utilizando o comando:
-
-```bash
-mvn clean package 
-```
-
 Com o Rancher ou Docker Desktop abertos, abra o terminal na pasta raiz e execute:
 
 ```bash
@@ -27,15 +21,15 @@ senha: admin
 
 Ao abrir pela primeira vez, clicar em Add New Server 
 
+```bash
+Name: locations-management-system
 Host: db_postgres 
 Port: 5432 
 Maintenance Database: postgres
 Username: postgres
 Password: postgres
-
-![image](https://github.com/user-attachments/assets/acdd5373-1554-4565-b954-75a015f59c63)
-
-![image](https://github.com/user-attachments/assets/93a575a9-d0cf-4daa-8ddd-9975d5c2f6d3)
+Save password ✔
+```
 
 ## eureka-server-app
 
@@ -61,7 +55,7 @@ http://localhost:8182/swagger-ui/index.html
 http://localhost:8183/swagger-ui/index.html
 ```
 
-## users-app
+# users-app
 
 ```bash
 http://localhost:8184/swagger-ui/index.html
