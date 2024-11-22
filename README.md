@@ -31,6 +31,7 @@ Password: postgres
 Save password ✔
 ```
 
+
 ## eureka-server-app
 
 ```bash
