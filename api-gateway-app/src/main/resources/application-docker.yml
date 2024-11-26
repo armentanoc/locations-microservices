@@ -18,6 +18,18 @@ spring:
           uri: lb://USERS-APP  
           predicates:
             - Path=/users/**  
+      cors:
+        allowedOrigins:
+          - "http://localhost:3000"  
+        allowedMethods:
+          - GET
+          - POST
+          - PUT
+          - DELETE
+        allowedHeaders:
+          - "*"
+        allowCredentials: true
+        maxAge: 3600 
 
 eureka:
   client:
